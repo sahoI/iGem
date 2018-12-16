@@ -11,6 +11,7 @@
  *
  * @var bool
  */
+include('index.html');
 echo 'Hello World';
 define('WP_USE_THEMES', true);
 
