@@ -1,47 +1,67 @@
-
-
-.header {
-  float: left;
-  width: 100%;
-  height: 100px;
-  background-color: #6F9C1B;
-}
-
-.header-logo {
-  float: right;
-  color: white;
-  z-index: 10;
-  font-size: 40px;
-  padding-right: 50px;
-}
-
-#nav-content {
-
-}
-
-
-.contents {
-  padding: 100px 100px;
-  background-color: white;
-}
-
 li {
-  /*float: left;*/
+  float: left;
   list-style: none;
-}
-.facebook {
-  //zoom: 30%;
-  padding-right: 20px;
-}
-.twitter {
-  //zoom: 11%;
 }
 
 footer {
   width: 100%;
   height: 100%;
-  background-color: #6F9C1B;
+  background-color: #37AB9D;
   color: #ffffff;
   padding-bottom: 10px;
   float: right;
+}
+
+.header {
+  float: left;
+  width: 100%;
+  height: 80px;
+
+  .header-logo {
+    float: left;
+    color: #586365;
+    font-family: "Lao MN";
+    img {
+      padding-left: 30px;
+      float: left;
+    }
+    .text {
+      float: left;
+      font-size: 50px;
+      padding-left: 20px;
+      padding-top: 10px;
+    }
+  }
+
+  .sns {
+    li {
+      padding-right: 10px;
+      padding-top: 10px;
+      float: right;
+    }
+    .facebook {
+      padding-right: 20px;
+    }
+  }
+}
+
+.navigation {
+  clear: left;
+  height: 80px;
+  background: #37AB9D;
+  text-decoration: none;
+  color: #CFEAEF;
+  .nav-content {
+    
+  }
+}
+
+.main {
+  .contents {
+    padding: 100px 100px;
+    background-color: white;
+    .title {
+
+    }
+  }
 }
