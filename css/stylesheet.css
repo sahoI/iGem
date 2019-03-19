@@ -44,7 +44,8 @@ footer {
   .navigation ul {
     padding-top: 25px; }
   .navigation li a {
-    border-right: 1px solid #586365; }
+    border-right: 1px solid #586365;
+    border-radius: 5px; }
   .navigation a {
     padding: 30px 10px;
     text-decoration: none;
@@ -55,8 +56,11 @@ footer {
     color: #586365;
     background-color: #FFC042; }
 
+.main li {
+  float: left; }
 .main .contents {
-  padding: 100px 100px;
+  padding: 50px 50px;
+  margin-bottom: 300px;
   background-color: white; }
 
 /*# sourceMappingURL=stylesheet.css.map */

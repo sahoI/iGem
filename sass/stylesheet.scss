@@ -59,6 +59,7 @@ footer {
   }
   li a {
     border-right: 1px solid #586365;
+    border-radius: 5px;
   }
   a {
     padding: 30px 10px;
@@ -74,8 +75,12 @@ footer {
 }
 
 .main {
+  li {
+    float: left;
+  }
   .contents {
-    padding: 100px 100px;
+    padding: 50px 50px;
+    margin-bottom: 300px;
     background-color: white;
     .title {
 
