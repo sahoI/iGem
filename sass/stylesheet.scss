@@ -52,7 +52,24 @@ footer {
   text-decoration: none;
   color: #CFEAEF;
   .nav-content {
-    
+    color: #CFEAEF;
+  }
+  ul {
+    padding-top: 25px;
+  }
+  li a {
+    border-right: 1px solid #586365;
+  }
+  a {
+    padding: 30px 10px;
+    text-decoration: none;
+    color: #CFEAEF;
+    font-size: 20px;
+  }
+  a:hover {
+    height: 80px;
+    color: #586365;
+    background-color: #FFC042;
   }
 }
 

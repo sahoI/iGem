@@ -39,6 +39,21 @@ footer {
   background: #37AB9D;
   text-decoration: none;
   color: #CFEAEF; }
+  .navigation .nav-content {
+    color: #CFEAEF; }
+  .navigation ul {
+    padding-top: 25px; }
+  .navigation li a {
+    border-right: 1px solid #586365; }
+  .navigation a {
+    padding: 30px 10px;
+    text-decoration: none;
+    color: #CFEAEF;
+    font-size: 20px; }
+  .navigation a:hover {
+    height: 80px;
+    color: #586365;
+    background-color: #FFC042; }
 
 .main .contents {
   padding: 100px 100px;
