@@ -1,3 +1,4 @@
+@charset "UTF-8";
 li {
   float: left;
   list-style: none; }
@@ -62,5 +63,13 @@ footer {
   padding: 50px 50px;
   margin-bottom: 300px;
   background-color: white; }
+  .main .contents .title:after {
+    background-color: #4DC0B2;
+    border-radius: 5px;
+    /* 線幅の半分 */
+    content: "";
+    display: block;
+    height: 6px;
+    width: calc(1000%); }
 
 /*# sourceMappingURL=stylesheet.css.map */

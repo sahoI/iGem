@@ -82,8 +82,13 @@ footer {
     padding: 50px 50px;
     margin-bottom: 300px;
     background-color: white;
-    .title {
-
+    .title:after { //下線
+      background-color: #4DC0B2;
+      border-radius: 5px; /* 線幅の半分 */
+      content: "";
+      display: block;
+      height: 6px;
+      width: calc(1000%); //下線の範囲
     }
   }
 }
