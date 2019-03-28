@@ -1,0 +1,171 @@
+$unit: 1em;
+/* ========================================================
+メディアクエリ
+=========================================================*/
+/*
+iPhone5: 320 × 568
+iPhone7: 375 × 667
+iPhone7 Plus: 414 × 736
+iPad/iPad Mini: 768 × 1024
+iPad Pro: 1024 × 1366
+*/
+$screen-md: 768px;
+$screen-md-min: $screen-md;
+$screen-sm-max: ($screen-md-min - 1);
+
+// メディアクエリ用MIXIN
+$breakpoints: (
+        'sm': 'screen and (max-width: ' + $screen-sm-max + ')',
+        'md': 'screen and (min-width: ' + $screen-md-min + ')',
+) !default;
+@mixin mq( $breakpoint: md ) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+/* SPサイズでない時は非表示 */
+.sp-only{
+  display: none;
+}
+@include mq(sm) {
+  .sp-only{
+    display: inherit;
+  }
+}
+
+/*#########################################################
+
+ヘッダ
+
+#########################################################*/
+//-------------------------------------------------------------------
+// PC版ヘッダ
+//-------------------------------------------------------------------
+.pg-header {
+  // グローバルナビゲーション
+  .nav-global {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px auto 0;
+    width: 560px;
+    list-style: none;
+
+    a {
+      display: block;
+      font: bold $unit*0.8 "YuMincho","Hiragino Mincho ProN",serif;
+      color: #000;
+      text-decoration: none;
+      &.current,
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+//-------------------------------------------------------------------
+// SP版ヘッダ
+//-------------------------------------------------------------------
+@include mq(sm) {
+  .sp-pg-header {
+    display: flex;
+    align-items: center;
+    // background-color: transparent;
+    padding-top: 1rem;
+    height: 77px;
+
+    /* ハンバーガーメニュー */
+    #panel-btn {
+      display: block;
+      margin: 0 1rem;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #F4F4F4;
+      z-index: 110;
+
+      /* 3本線アイコン用プレースホルダ */
+      %btn-icon {
+        display: block;
+        top: 49%;
+        left: 50%;
+        width: 24px;
+        height: 3px;
+        background: #252f39;
+      }
+      /* 3本線アイコン */
+      #panel-btn-icon {
+        @extend %btn-icon;
+        position: relative;
+        margin-left: -12px;
+        transition: 0.2s;
+        /* 上下のライン */
+        &:after,
+        &:before {
+          @extend %btn-icon;
+          position: absolute;
+          content: "";
+          left: 0;
+          transition: 0.3s;
+        }
+        &:before {
+          margin-top: -10px;
+        }
+        &:after {
+          margin-top: 7px;
+        }
+      }
+
+      /* 3本線アイコンを×アイコンに変化させる */
+      .close {
+        background: transparent !important;
+      }
+      .close:after,
+      .close:before {
+        margin-top: 0 !important;
+      }
+      .close:before {
+        transform: rotate(-45deg);
+      }
+      .close:after {
+        transform: rotate(-135deg);
+      }
+    }
+
+
+
+    // ナビゲーションメニュー
+    #g-navi {
+      position: absolute;
+      top: 0;
+      right: 100%;
+      text-align: left;
+      width: 100%;
+      height: 100%;
+      background-color: #283149;
+      transition: all, 0.3s;
+
+      // メニュー
+      .nav-global {
+        flex-direction: column;
+        margin-top: $unit * 7;
+        li {
+          a{
+            color: #d9bf9c;
+            line-height: 2;
+            text-decoration: none;
+            font-size: $unit*1.5;
+            letter-spacing: $unit*0.2;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+p{
+  margin-top: $unit*5;
+  font-size: $unit*0.8;
+}
