@@ -3,6 +3,9 @@ li {
   float: left;
   list-style: none; }
 
+a {
+  text-decoration: none; }
+
 footer {
   width: 100%;
   height: 100%;
@@ -11,105 +14,8 @@ footer {
   padding-bottom: 10px;
   float: right; }
 
-@media (max-width: 896px) {
-  .header {
-    display: block;
-    z-index: 5;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 90px;
-    background-color: #37AB9D; }
-    .header .text {
-      color: #fff; }
-    .header #panel-btn {
-      display: block;
-      float: right;
-      margin: 10px;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      background: #ffffff;
-      opacity: 0.8;
-      -webkit-transition: 0.3s ease-out;
-      transition: 0.3s ease-out; }
-      .header #panel-btn:hover {
-        opacity: 1;
-        -webkit-box-shadow: 0px 1px 5px 3px #379678;
-                box-shadow: 0px 1px 5px 3px #379678; }
-        .header #panel-btn:hover #panel-btn-icon:before {
-          margin-top: -12px; }
-        .header #panel-btn:hover #panel-btn-icon:after {
-          margin-top: 9px; }
-    .header #panel-btn-icon, .header #panel-btn-icon:after, .header #panel-btn-icon:before {
-      display: block;
-      top: 49%;
-      left: 50%;
-      width: 24px;
-      height: 3px;
-      background: #252f39; }
-    .header #panel-btn-icon {
-      position: relative;
-      margin-left: -12px;
-      -webkit-transition: 0.2s;
-      transition: 0.2s; }
-      .header #panel-btn-icon:after, .header #panel-btn-icon:before {
-        position: absolute;
-        content: "";
-        left: 0;
-        -webkit-transition: 0.3s;
-        transition: 0.3s; }
-      .header #panel-btn-icon:before {
-        margin-top: -10px; }
-      .header #panel-btn-icon:after {
-        margin-top: 7px; }
-    .header .close {
-      background: transparent !important; }
-      .header .close:after, .header .close:before {
-        margin-top: 0 !important; }
-      .header .close:before {
-        -webkit-transform: rotate(-45deg);
-                transform: rotate(-45deg); }
-      .header .closeafter {
-        -webkit-transform: rotate(-135deg);
-                transform: rotate(-135deg); }
-    .header .sns {
-      display: none; }
-
-  .navigation {
-    display: none;
-    height: 65vh; }
-    .navigation .nav-content {
-      position: relative;
-      left: 0;
-      visibility: visible;
-      overflow: auto;
-      width: 100%;
-      height: auto;
-      padding-top: 0;
-      text-align: center;
-      opacity: 1; }
-    .navigation ul {
-      background: #CFEAEF;
-      height: 100%; }
-      .navigation ul li {
-        display: inline-block;
-        margin-right: -6px;
-        border: none;
-        color: #4DC0B2; }
-        .navigation ul li a {
-          display: block;
-          padding: 12px 45px;
-          -webkit-transition: background-color .3s ease-in;
-          transition: background-color .3s ease-in; }
-        .navigation ul li a:hover {
-          background-color: #FFC042; }
-
-  .main {
-    margin-top: 100px; } }
-@media (max-width: 480px) {
-  .navigation {
+@media (max-width: 1296px) {
+  .sp-only {
     display: none; } }
 .header {
   float: left;
@@ -117,12 +23,12 @@ footer {
   height: 80px; }
   .header .header-logo {
     float: left;
-    color: #586365;
     font-family: "Lao MN"; }
     .header .header-logo img {
       padding-left: 30px;
       float: left; }
     .header .header-logo .text {
+      color: #586365;
       float: left;
       font-size: 50px;
       padding-left: 20px;
@@ -157,19 +63,21 @@ footer {
     color: #586365;
     background-color: #FFC042; }
 
-.main li {
-  float: left; }
-.main .contents {
-  margin-left: 30px;
-  margin-bottom: 3000px;
-  background-color: white; }
-  .main .contents .title:after {
-    background-color: #4DC0B2;
-    border-radius: 5px;
-    /* 線幅の半分 */
-    content: "";
-    display: block;
-    height: 6px;
-    width: calc(1000%); }
+.main {
+  margin: 30px 100px; }
+  .main li {
+    float: left; }
+  .main .contents {
+    margin-left: 30px;
+    margin-bottom: 300px;
+    background-color: white; }
+    .main .contents .title:after {
+      background-color: #4DC0B2;
+      border-radius: 5px;
+      /* 線幅の半分 */
+      content: "";
+      display: block;
+      height: 6px;
+      width: calc(100%); }
 
 /*# sourceMappingURL=stylesheet.css.map */

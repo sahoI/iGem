@@ -2,7 +2,9 @@ li {
   float: left;
   list-style: none;
 }
-
+a {
+  text-decoration: none;
+}
 footer {
   width: 100%;
   height: 100%;
@@ -15,129 +17,141 @@ footer {
   .main {
     //padding-top: 80px;
   }
-}
-
-@media (max-width: 896px) { //タブレット縦
-  .header {
-    display: block;
-    z-index: 5;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 90px;
-    background-color: #37AB9D;
-    .text {
-      color: #fff;
-    }
-    #panel-btn {
-      display: block;
-      float: right;
-      margin: 10px;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      background: #ffffff;
-      opacity: 0.8;
-      transition: 0.3s ease-out;
-      &:hover {
-        opacity: 1;
-        box-shadow: 0px 1px 5px 3px rgba(55,150,120,2);
-        #panel-btn-icon:before {
-          margin-top: -12px;
-        }
-        #panel-btn-icon:after {
-          margin-top: 9px;
-        }
-      }
-    }
-    %btn-icon {
-      display: block;
-      top: 49%;
-      left: 50%;
-      width: 24px;
-      height: 3px;
-      background: #252f39;
-    }
-    #panel-btn-icon {
-      @extend %btn-icon;
-      position: relative;
-      margin-left: -12px;
-      transition: 0.2s;
-      &:after,&:before {
-        @extend %btn-icon;
-        position: absolute;
-        content: "";
-        left: 0;
-        transition: 0.3s;
-      }
-      &:before {
-        margin-top: -10px;
-      }
-      &:after {
-        margin-top: 7px;
-      }
-    }
-    .close {
-      background: transparent !important;
-      &:after,&:before {
-        margin-top: 0 !important;
-      }
-      &:before {
-        transform: rotate(-45deg);
-      }
-      &after {
-        transform: rotate(-135deg);
-      }
-    }
-    .sns {
-      display: none;
-    }
-  }
-  .navigation {
-    display: none;
-    height: 65vh;
-    .nav-content {
-      position: relative;
-      left: 0;
-      visibility: visible;
-      overflow: auto;
-      width: 100%;
-      height: auto;
-      padding-top: 0;
-      text-align: center;
-      opacity: 1;
-    }
-    ul {
-      background: #CFEAEF;
-      height: 100%;
-      li {
-        display: inline-block;
-        margin-right: -6px;
-        border: none;
-        color: #4DC0B2;
-        a {
-          display: block;
-          padding: 12px 45px;
-          -webkit-transition: background-color .3s ease-in;
-          transition: background-color .3s ease-in;
-        }
-        a:hover {
-          background-color: #FFC042;
-        }
-      }
-    }
-  }
-  .main {
-    margin-top: 100px;
-  }
-}
-
-@media (max-width: 480px) { //スマホ縦
-  .navigation {
+  .sp-only {
     display: none;
   }
 }
+
+//@media (max-width: 896px) { //タブレット縦
+//  .header {
+//    display: block;
+//    z-index: 5;
+//    position: fixed;
+//    top: 0;
+//    left: 0;
+//    width: 100%;
+//    height: 90px;
+//    background-color: #37AB9D;
+//    .text {
+//      color: #fff;
+//    }
+//    .sp-only {
+//      display: block;
+//    }
+//    #panel-btn {
+//      display: block;
+//      float: right;
+//      margin: 10px;
+//      width: 60px;
+//      height: 60px;
+//      border-radius: 50%;
+//      background: #ffffff;
+//      opacity: 0.8;
+//      transition: 0.3s ease-out;
+//      &:hover {
+//        opacity: 1;
+//        box-shadow: 0px 1px 5px 3px rgba(55,150,120,2);
+//        #panel-btn-icon:before {
+//          margin-top: -12px;
+//        }
+//        #panel-btn-icon:after {
+//          margin-top: 9px;
+//        }
+//      }
+//      #panel-btn:active {
+//        background: #19283C;
+//        width: 500px;
+//        height: 500px;
+//        display: none;
+//      }
+//    }
+//    %btn-icon {
+//      display: block;
+//      top: 49%;
+//      left: 50%;
+//      width: 24px;
+//      height: 3px;
+//      background: #252f39;
+//    }
+//    #panel-btn-icon {
+//      @extend %btn-icon;
+//      position: relative;
+//      margin-left: -12px;
+//      transition: 0.2s;
+//      &:after,&:before {
+//        @extend %btn-icon;
+//        position: absolute;
+//        content: "";
+//        left: 0;
+//        transition: 0.3s;
+//      }
+//      &:before {
+//        margin-top: -10px;
+//      }
+//      &:after {
+//        margin-top: 7px;
+//      }
+//    }
+//    .close {
+//      background: transparent !important;
+//      &:after,&:before {
+//        margin-top: 0 !important;
+//      }
+//      &:before {
+//        transform: rotate(-45deg);
+//      }
+//      &after {
+//        transform: rotate(-135deg);
+//      }
+//    }
+//    .sns {
+//      display: none;
+//    }
+//  }
+//  .navigation {
+//    display: none;
+//    height: 65vh;
+//    .nav-content {
+//      position: relative;
+//      left: 0;
+//      visibility: visible;
+//      overflow: auto;
+//      width: 100%;
+//      height: auto;
+//      padding-top: 0;
+//      text-align: center;
+//      opacity: 1;
+//    }
+//    ul {
+//      background: #CFEAEF;
+//      height: 100%;
+//      li {
+//        display: inline-block;
+//        margin-right: -6px;
+//        border: none;
+//        color: #4DC0B2;
+//        a {
+//          display: block;
+//          padding: 12px 45px;
+//          -webkit-transition: background-color .3s ease-in;
+//          transition: background-color .3s ease-in;
+//        }
+//        a:hover {
+//          background-color: #FFC042;
+//        }
+//      }
+//    }
+//  }
+//  .main {
+//    margin-top: 100px;
+//  }
+//}
+
+//@media (max-width: 480px) { //スマホ縦
+//  .navigation {
+//    display: none;
+//  }
+//}
 
 //.wrap_header {
 //  width: 100%;
@@ -151,13 +165,14 @@ footer {
 
   .header-logo {
     float: left;
-    color: #586365;
+    //color: #586365;
     font-family: "Lao MN";
     img {
       padding-left: 30px;
       float: left;
     }
     .text {
+      color: #586365;
       float: left;
       font-size: 50px;
       padding-left: 20px;
@@ -207,12 +222,13 @@ footer {
 }
 
 .main {
+  margin: 30px 100px;
   li {
     float: left;
   }
   .contents {
     margin-left: 30px;
-    margin-bottom: 3000px;
+    margin-bottom: 300px;
     background-color: white;
     .title:after { //下線
       background-color: #4DC0B2;
@@ -220,9 +236,7 @@ footer {
       content: "";
       display: block;
       height: 6px;
-      //width: 80vw;
-      //width: 300%;
-      width: calc(1000%); //下線の範囲
+      width: calc(100%); //下線の範囲
     }
   }
 }
