@@ -114,5 +114,17 @@ footer {
   height: 6px;
   width: calc(100%);
 }
+.country {
+  height: 280px;
+  padding-left: 10px;
+  border-left: medium solid #dcdcdc;
+  /*background: #dcdcdc;*/
+}
+.country li {
+  padding-left: 30px;
+  /*list-style-type: square;*/
+  clear: both;
+  /*border-left: medium solid #dcdcdc;*/
+}
 
 /*# sourceMappingURL=stylesheet.css.map */
