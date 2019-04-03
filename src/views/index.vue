@@ -3,8 +3,7 @@
 
     <div class="header">
       <div class="header-logo">
-        <img src="../assets/iGEM_logo.png">
-        <div class="text">iGEM-ksu</div>
+        <router-link tag="li" id="top" to="/" exact><a><img src="../assets/iGEM_logo.png"><div class="text">iGEM-ksu</div></a></router-link>
       </div>
       <div class="sns">
         <li>

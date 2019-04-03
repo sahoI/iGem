@@ -26,6 +26,7 @@
     text-align: center;
     color: #2c3e50;
   }
+
   li {
     float: left;
     list-style: none;
@@ -117,6 +118,7 @@
     color: #586365;
     background-color: #FFC042;
   }
+
   .contents {
     height: 600px;
   }

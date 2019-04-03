@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <header></header>
+  <div id="app">
+    <!--<header></header>-->
     About Synthetic Biology
   </div>
 </template>
