@@ -7,8 +7,6 @@ yarn-error.log*
 /test/e2e/reports/
 selenium-debug.log
 disctiption.text
-/src/assets
-/img/
 
 # Editor directories and files
 .idea
