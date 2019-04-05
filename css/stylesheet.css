@@ -1,8 +1,4 @@
 @charset "UTF-8";
-li {
-  float: left;
-  list-style: none; }
-
 a {
   text-decoration: none; }
 
@@ -57,6 +53,9 @@ footer {
   .navigation li a {
     border-right: 1px solid #586365;
     border-radius: 5px; }
+  .navigation li {
+    float: left;
+    list-style-type: none; }
   .navigation a {
     padding: 30px 10px;
     text-decoration: none;
@@ -69,19 +68,24 @@ footer {
 
 .main {
   margin: 30px 100px; }
-  .main li {
-    float: left; }
-  .main .contents {
-    margin-left: 30px;
-    margin-bottom: 300px;
-    background-color: white; }
-    .main .contents .title:after {
-      background-color: #4DC0B2;
-      border-radius: 5px;
-      /* 線幅の半分 */
-      content: "";
-      display: block;
-      height: 6px;
-      width: calc(100%); }
+
+.contents {
+  margin-left: 30px;
+  margin-bottom: 300px;
+  background-color: white; }
+  .contents .title:after {
+    background-color: #4DC0B2;
+    border-radius: 5px;
+    /* 線幅の半分 */
+    content: "";
+    display: block;
+    height: 6px;
+    width: calc(100%); }
+  .contents .country {
+    height: 280px;
+    border-left: medium solid #cdcdcd; }
+    .contents .country li {
+      list-style-type: none;
+      padding-left: 20px; }
 
 /*# sourceMappingURL=stylesheet.css.map */

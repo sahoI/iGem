@@ -1,8 +1,3 @@
-li {
-  float: left;
-  list-style: none;
-}
-
 a {
   text-decoration: none;
 }
@@ -216,6 +211,10 @@ footer {
     border-right: 1px solid #586365;
     border-radius: 5px;
   }
+  li {
+    float: left;
+    list-style-type: none;
+  }
   a {
     padding: 30px 10px;
     text-decoration: none;
@@ -231,20 +230,26 @@ footer {
 
 .main {
   margin: 30px 100px;
-  li {
-    float: left;
+}
+
+.contents {
+  margin-left: 30px;
+  margin-bottom: 300px;
+  background-color: white;
+  .title:after { //下線
+    background-color: #4DC0B2;
+    border-radius: 5px; /* 線幅の半分 */
+    content: "";
+    display: block;
+    height: 6px;
+    width: calc(100%); //下線の範囲
   }
-  .contents {
-    margin-left: 30px;
-    margin-bottom: 300px;
-    background-color: white;
-    .title:after { //下線
-      background-color: #4DC0B2;
-      border-radius: 5px; /* 線幅の半分 */
-      content: "";
-      display: block;
-      height: 6px;
-      width: calc(100%); //下線の範囲
+  .country {
+    height: 280px;
+    border-left: medium solid #cdcdcd;
+    li {
+      list-style-type: none;
+      padding-left: 20px;
     }
   }
 }
