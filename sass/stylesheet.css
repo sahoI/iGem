@@ -90,5 +90,7 @@ footer {
     .contents .country li {
       list-style-type: none;
       padding-left: 20px; }
+  .contents .synthetic a {
+    text-decoration: underline; }
 
 /*# sourceMappingURL=stylesheet.css.map */
