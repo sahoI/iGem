@@ -1,9 +1,32 @@
+$pc: 1024px;
+$tab: 680px;
+$sp: 480px;
+@mixin pc {
+  @media(max-width: ($pc)) {
+    @content;
+  }
+}
+
+@mixin tab {
+  @media(max-width: ($tab)) {
+    @content;
+  }
+}
+
+@mixin sp {
+  @media(max-width: ($sp)) {
+    @content;
+  }
+}
+
 a {
   text-decoration: none;
 }
+
 li {
   list-style: none;
 }
+
 footer {
   width: 100%;
   height: 100%;
@@ -18,156 +41,114 @@ footer {
   }
 }
 
-@media (max-width: 1296px) { //PC
-  .main {
-    //padding-top: 80px;
+//@media (max-width: 1296px) { //PC
+//  .main {
+//    //padding-top: 80px;
+//  }
+//  .sp-only {
+//    display: none;
+//  }
+//}
+
+@include tab {
+  html, body {
+    margin: 0px;
+    padding: 0px;
   }
-  .sp-only {
+  .wrap_header_pc {
+    display: none;
+  }
+  input {
+    display: none;
+  }
+  img {
+    float: left;
+    padding-left: 30px;
+  }
+  menu {
+    position: relative;
+    z-index: -1;
+    font-size: 20px;
+    line-height: 20px;
+    height: 80px;
+    width: 95%;
+    min-width: 200px;
+    background: #37AB9D;
+  }
+  /* メニュー */
+  #menuOn:checked + menu {
+    max-width: 960px; /*コンテナと同じ数値を指定しておく必要あり*/
+    z-index: 20;
+  }
+  /* オーバーレイ */
+  /* メニューが表示されているときに */
+  /* LightBoxのように画面全体を覆うブロックを表示する */
+  /* これによってメニュー部分を除いて */
+  /* 画面全体がチェックボックスへのクリックになるので */
+  /* メニュー以外の部分をクリックするとメニューが閉じます */
+  #menuOn:checked + menu + div.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  #menuOn:checked + menu ul {
+    display: block;
+  }
+  ul {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    display: none;
+  }
+  li {
+    list-style-type: none;
+    /* メニュー要素の背景色と合わせる*/
+    background: #37AB9D;
+    min-width: 105px;
+    max-width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #586365;
+    a {
+      display: block;
+      padding: 10px;
+      color: whitesmoke;
+      :hover {
+        background-color: #FFC042;
+      }
+    }
+  }
+  /* ハンバーガーメニュー */
+  #menuOn + menu::after {
+    position: absolute;
+    z-index: 30;
+    display: block;
+    content: '\2630'; /* ハンバーガーメニュー*/
+    line-height: 40px;
+    width: 20px;
+    padding: 20px 40px 0px 20px;
+    color: white;
+    right: 0;
+    top: 0;
+    background: #37AB9D;
+  }
+
+  /* メニューを閉じる */
+  #menuOn:checked + menu::after {
+    content: '×'; /* 閉じるボタン */
+  }
+  .navigation {
     display: none;
   }
 }
 
-//@media (max-width: 896px) { //タブレット縦
-//  .header {
-//    display: block;
-//    z-index: 5;
-//    position: fixed;
-//    top: 0;
-//    left: 0;
-//    width: 100%;
-//    height: 90px;
-//    background-color: #37AB9D;
-//    .text {
-//      color: #fff;
-//    }
-//    .sp-only {
-//      display: block;
-//    }
-//    #panel-btn {
-//      display: block;
-//      float: right;
-//      margin: 10px;
-//      width: 60px;
-//      height: 60px;
-//      border-radius: 50%;
-//      background: #ffffff;
-//      opacity: 0.8;
-//      transition: 0.3s ease-out;
-//      &:hover {
-//        opacity: 1;
-//        box-shadow: 0px 1px 5px 3px rgba(55,150,120,2);
-//        #panel-btn-icon:before {
-//          margin-top: -12px;
-//        }
-//        #panel-btn-icon:after {
-//          margin-top: 9px;
-//        }
-//      }
-//      #panel-btn:active {
-//        background: #19283C;
-//        width: 500px;
-//        height: 500px;
-//        display: none;
-//      }
-//    }
-//    %btn-icon {
-//      display: block;
-//      top: 49%;
-//      left: 50%;
-//      width: 24px;
-//      height: 3px;
-//      background: #252f39;
-//    }
-//    #panel-btn-icon {
-//      @extend %btn-icon;
-//      position: relative;
-//      margin-left: -12px;
-//      transition: 0.2s;
-//      &:after,&:before {
-//        @extend %btn-icon;
-//        position: absolute;
-//        content: "";
-//        left: 0;
-//        transition: 0.3s;
-//      }
-//      &:before {
-//        margin-top: -10px;
-//      }
-//      &:after {
-//        margin-top: 7px;
-//      }
-//    }
-//    .close {
-//      background: transparent !important;
-//      &:after,&:before {
-//        margin-top: 0 !important;
-//      }
-//      &:before {
-//        transform: rotate(-45deg);
-//      }
-//      &after {
-//        transform: rotate(-135deg);
-//      }
-//    }
-//    .sns {
-//      display: none;
-//    }
-//  }
-//  .navigation {
-//    display: none;
-//    height: 65vh;
-//    .nav-content {
-//      position: relative;
-//      left: 0;
-//      visibility: visible;
-//      overflow: auto;
-//      width: 100%;
-//      height: auto;
-//      padding-top: 0;
-//      text-align: center;
-//      opacity: 1;
-//    }
-//    ul {
-//      background: #CFEAEF;
-//      height: 100%;
-//      li {
-//        display: inline-block;
-//        margin-right: -6px;
-//        border: none;
-//        color: #4DC0B2;
-//        a {
-//          display: block;
-//          padding: 12px 45px;
-//          -webkit-transition: background-color .3s ease-in;
-//          transition: background-color .3s ease-in;
-//        }
-//        a:hover {
-//          background-color: #FFC042;
-//        }
-//      }
-//    }
-//  }
-//  .main {
-//    margin-top: 100px;
-//  }
-//}
-
-//@media (max-width: 480px) { //スマホ縦
-//  .navigation {
-//    display: none;
-//  }
-//}
-
-//.wrap_header {
-//  width: 100%;
-//  position: fixed;
-//}
-
 .header {
-  float: left;
   width: 100%;
   height: 80px;
-
   .header-logo {
     float: left;
     //color: #586365;
@@ -191,13 +172,26 @@ footer {
       padding-top: 10px;
       float: right;
     }
-    .facebook {
-      padding-right: 20px;
+  }
+  @include tab {
+    .header-logo {
+      width: 100%;
+      background-color: #37AB9D;
+      img {
+        float: left;
+      }
+      .text {
+        display: none;
+      }
+    }
+    .sns {
+      display: none;
     }
   }
 }
 
 .navigation {
+  //@include pc {
   clear: left;
   height: 80px;
   background: #37AB9D;
@@ -219,15 +213,18 @@ footer {
   }
   a {
     padding: 30px 10px;
-    text-decoration: none;
     color: #CFEAEF;
     font-size: 20px;
+    :hover {
+      height: 80px;
+      color: #586365;
+      background-color: #FFC042;
+    }
   }
-  a:hover {
-    height: 80px;
-    color: #586365;
-    background-color: #FFC042;
-  }
+  //}
+  //@include tab {
+  //  display: none;
+  //}
 }
 
 .main {
@@ -254,7 +251,10 @@ footer {
       padding-left: 20px;
     }
   }
-  .synthetic a {
+  .synthetic a { //合成生物学
+    text-decoration: underline;
+  }
+  .about a { //サングラス
     text-decoration: underline;
   }
 }
