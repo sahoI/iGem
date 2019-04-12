@@ -1,6 +1,6 @@
 $pc: 1024px;
 $tab: 680px;
-$sp: 480px;
+//$sp: 480px;
 @mixin pc {
   @media(max-width: ($pc)) {
     @content;
@@ -13,11 +13,11 @@ $sp: 480px;
   }
 }
 
-@mixin sp {
-  @media(max-width: ($sp)) {
-    @content;
-  }
-}
+//@mixin sp {
+//  @media(max-width: ($sp)) {
+//    @content;
+//  }
+//}
 
 a {
   text-decoration: none;
@@ -27,33 +27,15 @@ li {
   list-style: none;
 }
 
-footer {
-  width: 100%;
-  height: 100%;
-  background-color: #37AB9D;
-  color: #ffffff;
-  padding-bottom: 10px;
-  float: right;
-  .footer-twitter {
-    padding-top: 20px;
-    padding-right: 50px;
-    text-align: right;
-  }
-}
-
-//@media (max-width: 1296px) { //PC
-//  .main {
-//    //padding-top: 80px;
-//  }
-//  .sp-only {
-//    display: none;
-//  }
-//}
-
 @include tab {
   html, body {
     margin: 0px;
     padding: 0px;
+  }
+  .header {
+    height: 80px;
+    background-color: #37AB9D;
+
   }
   .wrap_header_pc {
     display: none;
@@ -67,33 +49,33 @@ footer {
   }
   menu {
     position: relative;
-    z-index: -1;
+    z-index: 1;
     font-size: 20px;
     line-height: 20px;
-    height: 80px;
-    width: 95%;
+    width: 10%;
     min-width: 200px;
     background: #37AB9D;
+    float: right;
   }
   /* メニュー */
   #menuOn:checked + menu {
     max-width: 960px; /*コンテナと同じ数値を指定しておく必要あり*/
     z-index: 20;
   }
-  /* オーバーレイ */
-  /* メニューが表示されているときに */
-  /* LightBoxのように画面全体を覆うブロックを表示する */
-  /* これによってメニュー部分を除いて */
-  /* 画面全体がチェックボックスへのクリックになるので */
-  /* メニュー以外の部分をクリックするとメニューが閉じます */
+  /* オーバーレイ
+  メニューが表示されているときに
+  LightBoxのように画面全体を覆うブロックを表示する
+  これによってメニュー部分を除いて
+  画面全体がチェックボックスへのクリックになるので
+  メニュー以外の部分をクリックするとメニューが閉じます */
   #menuOn:checked + menu + div.overlay {
     position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 10;
-    background: rgba(0, 0, 0, 0.5);
+    //z-index: 10;
+    //background: rgba(0, 0, 0, 0.5);
   }
   #menuOn:checked + menu ul {
     display: block;
@@ -107,18 +89,24 @@ footer {
   li {
     list-style-type: none;
     /* メニュー要素の背景色と合わせる*/
-    background: #37AB9D;
+    background-color: #37AB9D;
     min-width: 105px;
     max-width: 100%;
     white-space: nowrap;
-    text-overflow: ellipsis;
+    //text-overflow: ellipsis;
     color: #586365;
     a {
       display: block;
       padding: 10px;
       color: whitesmoke;
-      :hover {
-        background-color: #FFC042;
+      //:hover {
+      //  background-color: #FFC042;
+      //  color: #586365;
+      //}
+      img {
+        padding: 0px 5px 0px 0px;
+        width: 10%;
+        //height: 10%;
       }
     }
   }
@@ -130,7 +118,7 @@ footer {
     content: '\2630'; /* ハンバーガーメニュー*/
     line-height: 40px;
     width: 20px;
-    padding: 20px 40px 0px 20px;
+    padding: 0px 40px 0px 20px;
     color: white;
     right: 0;
     top: 0;
@@ -143,6 +131,14 @@ footer {
   }
   .navigation {
     display: none;
+  }
+  footer {
+    text-align: center !important;
+    .footer-twitter {
+      padding-top: 20px;
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 }
 
@@ -164,34 +160,20 @@ footer {
       padding-left: 20px;
       padding-top: 10px;
     }
-  }
-
-  .sns {
-    li {
-      padding-right: 10px;
-      padding-top: 10px;
-      float: right;
-    }
-  }
-  @include tab {
-    .header-logo {
-      width: 100%;
-      background-color: #37AB9D;
-      img {
-        float: left;
-      }
-      .text {
-        display: none;
-      }
-    }
     .sns {
+      li {
+        padding-right: 10px;
+        padding-top: 10px;
+        float: right;
+      }
+    }
+    .wrap-menu {
       display: none;
     }
   }
 }
 
 .navigation {
-  //@include pc {
   clear: left;
   height: 80px;
   background: #37AB9D;
@@ -221,10 +203,6 @@ footer {
       background-color: #FFC042;
     }
   }
-  //}
-  //@include tab {
-  //  display: none;
-  //}
 }
 
 .main {
@@ -256,5 +234,18 @@ footer {
   }
   .about a { //サングラス
     text-decoration: underline;
+  }
+}
+
+footer {
+  width: 100%;
+  height: 100%;
+  background-color: #37AB9D;
+  color: #ffffff;
+  padding-bottom: 10px;
+  float: right;
+  .footer-twitter {
+    padding: 20px 50px 0px 0px;
+    text-align: right;
   }
 }
