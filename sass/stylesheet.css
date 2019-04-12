@@ -170,6 +170,7 @@ li {
     height: 6px;
     width: calc(100%); }
   .contents .country {
+    background-color: #cdcdcd;
     height: 280px;
     border-left: medium solid #cdcdcd; }
     .contents .country li {

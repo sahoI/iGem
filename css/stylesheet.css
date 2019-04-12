@@ -5,108 +5,108 @@ a {
 li {
   list-style: none; }
 
-html, body {
-  margin: 0px;
-  padding: 0px; }
+@media (max-width: 680px) {
+  html, body {
+    margin: 0px;
+    padding: 0px; }
 
-.header {
-  height: 80px;
-  background-color: #37AB9D; }
+  .header {
+    height: 80px;
+    background-color: #37AB9D; }
 
-.wrap_header_pc {
-  display: none; }
+  .wrap_header_pc {
+    display: none; }
 
-input {
-  display: none; }
+  input {
+    display: none; }
 
-img {
-  float: left;
-  padding-left: 30px; }
+  img {
+    float: left;
+    padding-left: 30px; }
 
-menu {
-  position: relative;
-  z-index: 1;
-  font-size: 20px;
-  line-height: 20px;
-  width: 10%;
-  min-width: 200px;
-  background: #37AB9D;
-  float: right; }
+  menu {
+    position: relative;
+    z-index: 1;
+    font-size: 20px;
+    line-height: 20px;
+    width: 10%;
+    min-width: 200px;
+    background: #37AB9D;
+    float: right; }
 
-/* メニュー */
-#menuOn:checked + menu {
-  max-width: 960px;
-  /*コンテナと同じ数値を指定しておく必要あり*/
-  z-index: 20; }
+  /* メニュー */
+  #menuOn:checked + menu {
+    max-width: 960px;
+    /*コンテナと同じ数値を指定しておく必要あり*/
+    z-index: 20; }
 
-/* オーバーレイ
-メニューが表示されているときに
-LightBoxのように画面全体を覆うブロックを表示する
-これによってメニュー部分を除いて
-画面全体がチェックボックスへのクリックになるので
-メニュー以外の部分をクリックするとメニューが閉じます */
-#menuOn:checked + menu + div.overlay {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0; }
+  /* オーバーレイ
+  メニューが表示されているときに
+  LightBoxのように画面全体を覆うブロックを表示する
+  これによってメニュー部分を除いて
+  画面全体がチェックボックスへのクリックになるので
+  メニュー以外の部分をクリックするとメニューが閉じます */
+  #menuOn:checked + menu + div.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0; }
 
-#menuOn:checked + menu ul {
-  display: block; }
+  #menuOn:checked + menu ul {
+    display: block; }
 
-ul {
-  position: absolute;
-  top: 40px;
-  right: 0;
-  display: none; }
+  ul {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    display: none; }
 
-li {
-  list-style-type: none;
-  /* メニュー要素の背景色と合わせる*/
-  background-color: #37AB9D;
-  min-width: 105px;
-  max-width: 100%;
-  white-space: nowrap;
-  color: #586365; }
-  li a {
+  li {
+    list-style-type: none;
+    /* メニュー要素の背景色と合わせる*/
+    background-color: #37AB9D;
+    min-width: 105px;
+    max-width: 100%;
+    white-space: nowrap;
+    color: #586365; }
+    li a {
+      display: block;
+      padding: 10px;
+      color: whitesmoke; }
+      li a img {
+        padding: 0px 5px 0px 0px;
+        width: 10%; }
+
+  /* ハンバーガーメニュー */
+  #menuOn + menu::after {
+    position: absolute;
+    z-index: 30;
     display: block;
-    padding: 10px;
-    color: whitesmoke; }
-    li a img {
-      padding: 0px 5px 0px 0px;
-      width: 10%; }
+    content: '\2630';
+    /* ハンバーガーメニュー*/
+    line-height: 40px;
+    width: 20px;
+    padding: 0px 40px 0px 20px;
+    color: white;
+    right: 0;
+    top: 0;
+    background: #37AB9D; }
 
-/* ハンバーガーメニュー */
-#menuOn + menu::after {
-  position: absolute;
-  z-index: 30;
-  display: block;
-  content: '\2630';
-  /* ハンバーガーメニュー*/
-  line-height: 40px;
-  width: 20px;
-  padding: 0px 40px 0px 20px;
-  color: white;
-  right: 0;
-  top: 0;
-  background: #37AB9D; }
+  /* メニューを閉じる */
+  #menuOn:checked + menu::after {
+    content: '×';
+    /* 閉じるボタン */ }
 
-/* メニューを閉じる */
-#menuOn:checked + menu::after {
-  content: '×';
-  /* 閉じるボタン */ }
+  .navigation {
+    display: none; }
 
-.navigation {
-  display: none; }
-
-footer {
-  text-align: center !important; }
-  footer .footer-twitter {
-    padding-top: 20px;
-    margin-left: auto;
-    margin-right: auto; }
-
+  footer {
+    text-align: center !important; }
+    footer .footer-twitter {
+      padding-top: 20px;
+      margin-left: auto;
+      margin-right: auto; } }
 .header {
   width: 100%;
   height: 80px; }
@@ -170,6 +170,7 @@ footer {
     height: 6px;
     width: calc(100%); }
   .contents .country {
+    background-color: #cdcdcd;
     height: 280px;
     border-left: medium solid #cdcdcd; }
     .contents .country li {
