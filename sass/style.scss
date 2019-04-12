@@ -1,6 +1,5 @@
 $pc: 1024px;
 $tab: 680px;
-//$sp: 480px;
 @mixin pc {
   @media(max-width: ($pc)) {
     @content;
@@ -63,8 +62,6 @@ html, body {
     bottom: 0;
     left: 0;
     right: 0;
-    //z-index: 10;
-    //background: rgba(0, 0, 0, 0.5);
   }
   #menuOn:checked + menu ul {
     display: block;
@@ -95,7 +92,6 @@ html, body {
       img {
         padding: 0px 5px 0px 0px;
         width: 10%;
-        //height: 10%;
       }
     }
   }
@@ -121,11 +117,24 @@ html, body {
 }
 
 .main {
+  font-family: 'Lao MN';
   margin: 30px 100px;
   .contents {
     margin-left: 5px;
-    margin-bottom: 300px;
+    margin-bottom: 30px;
     background-color: white;
+    //font-size: 40px;
+    .name {
+      background: linear-gradient(transparent 60%, #FFC042 90%);
+      font-size: 40px;
+      font-weight: bold;
+    }
+    .profile {
+      font-size: 30px;
+    }
+    p {
+      font-size: 20px;
+    }
     .title:after { //下線
       background-color: #4DC0B2;
       border-radius: 5px; /* 線幅の半分 */
@@ -173,6 +182,7 @@ footer {
     }
     ul {
       top: 0px;
+      padding: 0px;
     }
     #menuOn + menu::after {
       line-height: 10px;
@@ -184,14 +194,21 @@ footer {
       img {
         width: 100px;
       }
-      h1 {
+      .title {
         font-size: 30px;
       }
-      h2 {
-        font-size: 15px;
+      .name {
+        font-size: 25px;
+      }
+      .profile {
+        font-size: 20px;
+        //line-height: 20px;
       }
       p {
-        font-size: 10px;
+        font-size: 15px;
+      }
+      .schedule img {
+        width: 80%;
       }
     }
   }

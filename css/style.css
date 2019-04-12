@@ -88,11 +88,21 @@ html, body {
     /* 閉じるボタン */ }
 
 .main {
+  font-family: 'Lao MN';
   margin: 30px 100px; }
   .main .contents {
     margin-left: 5px;
-    margin-bottom: 300px;
+    margin-bottom: 30px;
     background-color: white; }
+    .main .contents .name {
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(60%, transparent), color-stop(90%, #FFC042));
+      background: linear-gradient(transparent 60%, #FFC042 90%);
+      font-size: 40px;
+      font-weight: bold; }
+    .main .contents .profile {
+      font-size: 30px; }
+    .main .contents p {
+      font-size: 20px; }
     .main .contents .title:after {
       background-color: #4DC0B2;
       border-radius: 5px;
@@ -130,7 +140,8 @@ footer {
     .header img {
       width: 40px; }
     .header ul {
-      top: 0px; }
+      top: 0px;
+      padding: 0px; }
     .header #menuOn + menu::after {
       line-height: 10px; }
 
@@ -138,12 +149,16 @@ footer {
     margin: 0px 3px; }
     .main .contents img {
       width: 100px; }
-    .main .contents h1 {
+    .main .contents .title {
       font-size: 30px; }
-    .main .contents h2 {
-      font-size: 15px; }
+    .main .contents .name {
+      font-size: 25px; }
+    .main .contents .profile {
+      font-size: 20px; }
     .main .contents p {
-      font-size: 10px; }
+      font-size: 15px; }
+    .main .contents .schedule img {
+      width: 80%; }
 
   .footer-twitter {
     padding: 20px 0px !important;
