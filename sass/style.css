@@ -11,9 +11,7 @@ html, body {
 
 .header {
   height: 80px;
-  background-color: #37AB9D; }
-
-.wrap-menu {
+  background-color: #37AB9D;
   /* メニュー */
   /* オーバーレイ
   メニューが表示されているときに
@@ -23,12 +21,12 @@ html, body {
   メニュー以外の部分をクリックするとメニューが閉じます */
   /* ハンバーガーメニュー */
   /* メニューを閉じる */ }
-  .wrap-menu input {
+  .header input {
     display: none; }
-  .wrap-menu img {
+  .header img {
     float: left;
-    padding-left: 30px; }
-  .wrap-menu menu {
+    padding: 5px 30px; }
+  .header menu {
     position: relative;
     z-index: 1;
     font-size: 20px;
@@ -37,24 +35,24 @@ html, body {
     min-width: 200px;
     background: #37AB9D;
     float: right; }
-  .wrap-menu #menuOn:checked + menu {
+  .header #menuOn:checked + menu {
     max-width: 960px;
     /*コンテナと同じ数値を指定しておく必要あり*/
     z-index: 20; }
-  .wrap-menu #menuOn:checked + menu + div.overlay {
+  .header #menuOn:checked + menu + div.overlay {
     position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0; }
-  .wrap-menu #menuOn:checked + menu ul {
+  .header #menuOn:checked + menu ul {
     display: block; }
-  .wrap-menu ul {
+  .header ul {
     position: absolute;
     top: 40px;
     right: 0;
     display: none; }
-  .wrap-menu li {
+  .header li {
     list-style-type: none;
     /* メニュー要素の背景色と合わせる*/
     background-color: #37AB9D;
@@ -62,17 +60,17 @@ html, body {
     max-width: 100%;
     white-space: nowrap;
     color: #586365; }
-    .wrap-menu li a {
+    .header li a {
       display: block;
       padding: 10px;
       color: whitesmoke; }
-      .wrap-menu li a :hover {
+      .header li a :hover {
         background-color: #FFC042;
         color: #586365; }
-      .wrap-menu li a img {
+      .header li a img {
         padding: 0px 5px 0px 0px;
         width: 10%; }
-  .wrap-menu #menuOn + menu::after {
+  .header #menuOn + menu::after {
     position: absolute;
     z-index: 30;
     display: block;
@@ -85,47 +83,36 @@ html, body {
     right: 0;
     top: 0;
     background: #37AB9D; }
-  .wrap-menu #menuOn:checked + menu::after {
+  .header #menuOn:checked + menu::after {
     content: '×';
     /* 閉じるボタン */ }
 
-footer {
-  text-align: center !important; }
-  footer .footer-twitter {
-    padding-top: 20px;
-    margin-left: auto;
-    margin-right: auto; }
-
 .main {
   margin: 30px 100px; }
+  .main .contents {
+    margin-left: 5px;
+    margin-bottom: 300px;
+    background-color: white; }
+    .main .contents .title:after {
+      background-color: #4DC0B2;
+      border-radius: 5px;
+      /* 線幅の半分 */
+      content: "";
+      display: block;
+      height: 6px;
+      width: calc(100%); }
+    .main .contents .country {
+      height: 280px;
+      border-left: medium solid #cdcdcd; }
+      .main .contents .country li {
+        list-style-type: none;
+        padding-left: 20px;
+        background-color: #ffffff; }
+    .main .contents .synthetic a {
+      text-decoration: underline; }
+    .main .contents .about a {
+      text-decoration: underline; }
 
-.contents {
-  margin-left: 5px;
-  margin-bottom: 300px;
-  background-color: white; }
-  .contents .title:after {
-    background-color: #4DC0B2;
-    border-radius: 5px;
-    /* 線幅の半分 */
-    content: "";
-    display: block;
-    height: 6px;
-    width: calc(100%); }
-  .contents .country {
-    height: 280px;
-    border-left: medium solid #cdcdcd; }
-    .contents .country li {
-      list-style-type: none;
-      padding-left: 20px;
-      background-color: #ffffff; }
-  .contents .synthetic a {
-    text-decoration: underline; }
-  .contents .about a {
-    text-decoration: underline; }
-
-@media (max-width: 680px) {
-  .main {
-    margin: 0px 3px; } }
 footer {
   width: 100%;
   height: 100%;
@@ -136,5 +123,30 @@ footer {
   footer .footer-twitter {
     padding: 20px 50px 0px 0px;
     text-align: right; }
+
+@media (max-width: 680px) {
+  .header {
+    height: 50px; }
+    .header img {
+      width: 40px; }
+    .header ul {
+      top: 0px; }
+    .header #menuOn + menu::after {
+      line-height: 10px; }
+
+  .main {
+    margin: 0px 3px; }
+    .main .contents img {
+      width: 100px; }
+    .main .contents h1 {
+      font-size: 30px; }
+    .main .contents h2 {
+      font-size: 15px; }
+    .main .contents p {
+      font-size: 10px; }
+
+  .footer-twitter {
+    padding: 20px 0px !important;
+    text-align: center !important; } }
 
 /*# sourceMappingURL=style.css.map */
