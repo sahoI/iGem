@@ -6,25 +6,31 @@ $tab: 680px;
     @content;
   }
 }
+
 @mixin other {
   @media(max-width: ($tab)) {
     @content;
   }
 }
+
 a {
   text-decoration: none;
 }
+
 li {
   list-style: none;
 }
+
 html, body {
   margin: 0px;
   padding: 0px;
 }
+
 .header {
   height: 80px;
   background-color: #37AB9D;
 }
+
 .wrap-menu {
   input {
     display: none;
@@ -116,9 +122,7 @@ html, body {
     content: '×'; /* 閉じるボタン */
   }
 }
-.navigation {
-  display: none;
-}
+
 footer {
   text-align: center !important;
   .footer-twitter {
@@ -127,6 +131,7 @@ footer {
     margin-right: auto;
   }
 }
+
 .main {
   margin: 30px 100px;
 }

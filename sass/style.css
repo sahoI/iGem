@@ -89,9 +89,6 @@ html, body {
     content: '×';
     /* 閉じるボタン */ }
 
-.navigation {
-  display: none; }
-
 footer {
   text-align: center !important; }
   footer .footer-twitter {
