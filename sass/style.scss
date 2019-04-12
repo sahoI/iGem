@@ -1,171 +1,251 @@
-$unit: 1em;
-/* ========================================================
-メディアクエリ
-=========================================================*/
-/*
-iPhone5: 320 × 568
-iPhone7: 375 × 667
-iPhone7 Plus: 414 × 736
-iPad/iPad Mini: 768 × 1024
-iPad Pro: 1024 × 1366
-*/
-$screen-md: 768px;
-$screen-md-min: $screen-md;
-$screen-sm-max: ($screen-md-min - 1);
-
-// メディアクエリ用MIXIN
-$breakpoints: (
-        'sm': 'screen and (max-width: ' + $screen-sm-max + ')',
-        'md': 'screen and (min-width: ' + $screen-md-min + ')',
-) !default;
-@mixin mq( $breakpoint: md ) {
-  @media #{map-get($breakpoints, $breakpoint)} {
+$pc: 1024px;
+$tab: 680px;
+//$sp: 480px;
+@mixin pc {
+  @media(max-width: ($pc)) {
     @content;
   }
 }
 
-/* SPサイズでない時は非表示 */
-.sp-only{
+@mixin tab {
+  @media(max-width: ($tab)) {
+    @content;
+  }
+}
+
+//@mixin sp {
+//  @media(max-width: ($sp)) {
+//    @content;
+//  }
+//}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+//@include tab {
+html, body {
+  margin: 0px;
+  padding: 0px;
+}
+.header {
+  height: 80px;
+  background-color: #37AB9D;
+
+}
+.wrap_header_pc {
   display: none;
 }
-@include mq(sm) {
-  .sp-only{
-    display: inherit;
-  }
+input {
+  display: none;
 }
-
-/*#########################################################
-
-ヘッダ
-
-#########################################################*/
-//-------------------------------------------------------------------
-// PC版ヘッダ
-//-------------------------------------------------------------------
-.pg-header {
-  // グローバルナビゲーション
-  .nav-global {
-    display: flex;
-    justify-content: space-between;
-    margin: 20px auto 0;
-    width: 560px;
-    list-style: none;
-
-    a {
-      display: block;
-      font: bold $unit*0.8 "YuMincho","Hiragino Mincho ProN",serif;
-      color: #000;
-      text-decoration: none;
-      &.current,
-      &:hover {
-        text-decoration: underline;
-      }
+img {
+  float: left;
+  padding-left: 30px;
+}
+menu {
+  position: relative;
+  z-index: 1;
+  font-size: 20px;
+  line-height: 20px;
+  width: 10%;
+  min-width: 200px;
+  background: #37AB9D;
+  float: right;
+}
+/* メニュー */
+#menuOn:checked + menu {
+  max-width: 960px; /*コンテナと同じ数値を指定しておく必要あり*/
+  z-index: 20;
+}
+/* オーバーレイ
+メニューが表示されているときに
+LightBoxのように画面全体を覆うブロックを表示する
+これによってメニュー部分を除いて
+画面全体がチェックボックスへのクリックになるので
+メニュー以外の部分をクリックするとメニューが閉じます */
+#menuOn:checked + menu + div.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  //z-index: 10;
+  //background: rgba(0, 0, 0, 0.5);
+}
+#menuOn:checked + menu ul {
+  display: block;
+}
+ul {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  display: none;
+}
+li {
+  list-style-type: none;
+  /* メニュー要素の背景色と合わせる*/
+  background-color: #37AB9D;
+  min-width: 105px;
+  max-width: 100%;
+  white-space: nowrap;
+  //text-overflow: ellipsis;
+  color: #586365;
+  a {
+    display: block;
+    padding: 10px;
+    color: whitesmoke;
+    //:hover {
+    //  background-color: #FFC042;
+    //  color: #586365;
+    //}
+    img {
+      padding: 0px 5px 0px 0px;
+      width: 10%;
+      //height: 10%;
     }
   }
 }
+/* ハンバーガーメニュー */
+#menuOn + menu::after {
+  position: absolute;
+  z-index: 30;
+  display: block;
+  content: '\2630'; /* ハンバーガーメニュー*/
+  line-height: 40px;
+  width: 20px;
+  padding: 0px 40px 0px 20px;
+  color: white;
+  right: 0;
+  top: 0;
+  background: #37AB9D;
+}
 
-//-------------------------------------------------------------------
-// SP版ヘッダ
-//-------------------------------------------------------------------
-@include mq(sm) {
-  .sp-pg-header {
-    display: flex;
-    align-items: center;
-    // background-color: transparent;
-    padding-top: 1rem;
-    height: 77px;
+/* メニューを閉じる */
+#menuOn:checked + menu::after {
+  content: '×'; /* 閉じるボタン */
+}
+.navigation {
+  display: none;
+}
+footer {
+  text-align: center !important;
+  .footer-twitter {
+    padding-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+//}
+//@include tab {
+//  .header {
+//    width: 100%;
+//    height: 80px;
+//    .header-logo {
+//      float: left;
+//      //color: #586365;
+//      font-family: "Lao MN";
+//      img {
+//        padding-left: 30px;
+//        float: left;
+//      }
+//      .text {
+//        color: #586365;
+//        float: left;
+//        font-size: 50px;
+//        padding-left: 20px;
+//        padding-top: 10px;
+//      }
+//      .sns {
+//        li {
+//          padding-right: 10px;
+//          padding-top: 10px;
+//          float: right;
+//        }
+//      }
+//      .wrap-menu {
+//        display: none;
+//      }
+//    }
+//  }
+//
+//  .navigation {
+//    clear: left;
+//    height: 80px;
+//    background: #37AB9D;
+//    text-decoration: none;
+//    color: #CFEAEF;
+//    .nav-content {
+//      color: #CFEAEF;
+//    }
+//    ul {
+//      padding-top: 25px;
+//    }
+//    li a {
+//      border-right: 1px solid #586365;
+//      border-radius: 5px;
+//    }
+//    li {
+//      float: left;
+//      list-style-type: none;
+//    }
+//    a {
+//      padding: 30px 10px;
+//      color: #CFEAEF;
+//      font-size: 20px;
+//      :hover {
+//        height: 80px;
+//        color: #586365;
+//        background-color: #FFC042;
+//      }
+//    }
+//  }
+//}
+.main {
+  margin: 30px 100px;
+}
 
-    /* ハンバーガーメニュー */
-    #panel-btn {
-      display: block;
-      margin: 0 1rem;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      background: #F4F4F4;
-      z-index: 110;
-
-      /* 3本線アイコン用プレースホルダ */
-      %btn-icon {
-        display: block;
-        top: 49%;
-        left: 50%;
-        width: 24px;
-        height: 3px;
-        background: #252f39;
-      }
-      /* 3本線アイコン */
-      #panel-btn-icon {
-        @extend %btn-icon;
-        position: relative;
-        margin-left: -12px;
-        transition: 0.2s;
-        /* 上下のライン */
-        &:after,
-        &:before {
-          @extend %btn-icon;
-          position: absolute;
-          content: "";
-          left: 0;
-          transition: 0.3s;
-        }
-        &:before {
-          margin-top: -10px;
-        }
-        &:after {
-          margin-top: 7px;
-        }
-      }
-
-      /* 3本線アイコンを×アイコンに変化させる */
-      .close {
-        background: transparent !important;
-      }
-      .close:after,
-      .close:before {
-        margin-top: 0 !important;
-      }
-      .close:before {
-        transform: rotate(-45deg);
-      }
-      .close:after {
-        transform: rotate(-135deg);
-      }
+.contents {
+  margin-left: 30px;
+  margin-bottom: 300px;
+  background-color: white;
+  .title:after { //下線
+    background-color: #4DC0B2;
+    border-radius: 5px; /* 線幅の半分 */
+    content: "";
+    display: block;
+    height: 6px;
+    width: calc(100%); //下線の範囲
+  }
+  .country {
+    height: 280px;
+    border-left: medium solid #cdcdcd;
+    li {
+      list-style-type: none;
+      padding-left: 20px;
     }
-
-
-
-    // ナビゲーションメニュー
-    #g-navi {
-      position: absolute;
-      top: 0;
-      right: 100%;
-      text-align: left;
-      width: 100%;
-      height: 100%;
-      background-color: #283149;
-      transition: all, 0.3s;
-
-      // メニュー
-      .nav-global {
-        flex-direction: column;
-        margin-top: $unit * 7;
-        li {
-          a{
-            color: #d9bf9c;
-            line-height: 2;
-            text-decoration: none;
-            font-size: $unit*1.5;
-            letter-spacing: $unit*0.2;
-          }
-        }
-      }
-    }
+  }
+  .synthetic a { //合成生物学
+    text-decoration: underline;
+  }
+  .about a { //サングラス
+    text-decoration: underline;
   }
 }
 
-
-p{
-  margin-top: $unit*5;
-  font-size: $unit*0.8;
+footer {
+  width: 100%;
+  height: 100%;
+  background-color: #37AB9D;
+  color: #ffffff;
+  padding-bottom: 10px;
+  float: right;
+  .footer-twitter {
+    padding: 20px 50px 0px 0px;
+    text-align: right;
+  }
 }
