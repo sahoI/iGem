@@ -110,17 +110,27 @@ html, body {
       display: block;
       height: 6px;
       width: calc(100%); }
-    .main .contents .country {
-      height: 280px;
+    .main .contents .contents-list {
+      padding: 10px 0px;
       border-left: medium solid #cdcdcd; }
-      .main .contents .country li {
+      .main .contents .contents-list li {
         list-style-type: none;
-        padding-left: 20px;
-        background-color: #ffffff; }
+        padding-left: 20px; }
+    .main .contents .univ {
+      padding: 10px 0px; }
+      .main .contents .univ li {
+        padding-left: 20px; }
     .main .contents .synthetic a {
       text-decoration: underline; }
-    .main .contents .about a {
-      text-decoration: underline; }
+    .main .contents .about {
+      padding: 8px 19px;
+      margin: 1em 0;
+      color: #2c2c2f;
+      background: #e4f5f2;
+      border: dashed 5px #FFC042; }
+      .main .contents .about p {
+        margin: 0;
+        padding: 0; }
 
 footer {
   width: 100%;
